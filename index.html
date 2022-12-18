@@ -4,105 +4,161 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fair Trade Coffee</title>
+    <title>Sugar Supply Chain</title>
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 
 <body>
     <div class="container">
-        <h1 style="text-align: center;">Fair Trade Coffee</h1>
+        <h1 style="text-align: center;">Sugar Supply Chain</h1>
         <hr>
-        <p style="text-align: center;">Prove the authenticity of coffee using the Ethereum blockchain.</p>
+        <p style="text-align: center;">Prove the authenticity of sugar using the Ethereum blockchain.</p>
     </div>
 
     <div id="ftc-harvest">
-        <h2>Product Details</h2>
+        <h2>Product</h2>
         <div class="form-group">
             SKU
             <br>
-            <input class="input-field" type="number" id="sku" name="sku" readonly><br>
+            <input class="input-field" type="number" id="sku" name="sku" readonly>
+            <br>
 
             UPC
             <br>
-            <input type="number" id="upc" name="upc"><br>
+            <input type="number" id="upc" name="upc">
+            <br>
 
             Current Owner ID
             <br>
-            <input type="text" id="ownerID" name="ownerID" size="50" readonly><br>
+            <input type="text" id="ownerID" name="ownerID" size="50" readonly>
+            <br>
 
             State
             <br>
-            <input type="text" id="state" name="state" size="50" readonly><br>
+            <input type="text" id="state" name="state" size="50" readonly>
+            <br>
+
+            <button type="button" data-id="1">Fetch Data</button>
+        </div>
+        <div class=form-break></div>
+
+        <h2>Farmer</h2>
+        <div class="form-group">
+            Farmer ID
+            <br>
+            <input type="text" id="originFarmerID" name="originFarmerID" size="50" readonly>
+            <br>
+            
+            Farm Name
+            <br>
+            <input type="text" id="originFarmName" name="originFarmName">
+            <br>
+            
+            Farm Information
+            <br>
+            <input type="text" id="originFarmInformation" name="originFarmInformation">
+            <br>
+            
+            Farm Latitude
+            <br>
+            <input type="text" id="originFarmLatitude" name="originFarmLatitude">
+            <br>
+            
+            Farm Longitude
+            <br>
+            <input type="text" id="originFarmLongitude" name="originFarmLongitude">
+            <br>
 
             Product Notes
             <br>
-            <input type="text" id="productNotes" name="productNotes" size="60"><br>
-            
-            Product Price
+            <input type="text" id="productNotes" name="productNotes" size="60">
             <br>
-            <input type="number" id="productPrice" name="productPrice"> ETH<br>
-            
+
+            <button type="button" data-id="2">Harvest</button>
+            <button type="button" data-id="3">Send to Mill</button>
+        </div>
+        <div class=form-break></div>
+
+        <h2>Mill</h2>
+        <div class="form-group">           
+            Mill ID
+            <br>
+            <input type="text" id="millID" name="millID" size="50" readonly>
+            <br>
+
+            <button type="button" data-id="4">Receive from Farm</button>
+            <button type="button" data-id="5">Mill</button>
+            <button type="button" data-id="6">Send to Refinery</button>
+        </div>
+        <div class=form-break></div>
+
+        <h2>Refinery</h2>
+        <div class="form-group">           
+            Refinery ID
+            <br>
+            <input type="text" id="refineryID" name="refineryID" size="50" readonly>
+            <br>
+
+            Price To Distributor
+            <br>
+            <input type="number" id="priceToDistributor" name="priceToDistributor"> ETH
+            <br>
+
+            <button type="button" data-id="7">Receive from Mill</button>
+            <button type="button" data-id="8">Refine</button>
+            <button type="button" data-id="9">Pack</button>
+            <button type="button" data-id="10">Put For Sale to Distributor</button>
+        </div>
+        <div class=form-break></div>
+
+        <h2>Distributor</h2>
+        <div class="form-group">           
             Distributor ID
             <br>
             <input type="text" id="distributorID" name="distributorID" size="50" readonly>
             <br>
-            
+
+            <button type="button" data-id="11">Buy</button>
+            <button type="button" data-id="12">Send to Retailer</button>
+        </div>
+        <div class=form-break></div>
+
+        <h2>Retailer</h2>
+        <div class="form-group">           
             Retailer ID
             <br>
-            <input type="text" id="retailerID" name="retailerID" size="50" readonly><br>
-           
+            <input type="text" id="retailerID" name="retailerID" size="50" readonly>
+            <br>
+
+            Price To Consumer
+            <br>
+            <input type="number" id="priceToConsumer" name="priceToConsumer"> ETH
+            <br>
+
+            <button type="button" data-id="13">Receive from Distributor</button>
+            <button type="button" data-id="14">Put For Sale to Consumer</button>
+        </div>
+        <div class=form-break></div>
+
+        <h2>Consumer</h2>
+        <div class="form-group">           
             Consumer ID
             <br>
             <input type="text" id="consumerID" name="consumerID" size="50" readonly><br>
+            <br>
+
+            <button type="button" data-id="15">Buy</button>
         </div>
-
-        <div class=form-break></div>
-
-        <h2>Farm Details</h2>
-        <div class="form-group">
-            Farmer ID
-            <br>
-            <input type="text" id="originFarmerID" name="originFarmerID" size="50" readonly><br>
-            
-            Farm Name
-            <br>
-            <input type="text" id="originFarmName" name="originFarmName"><br>
-            
-            Farm Information
-            <br>
-            <input type="text" id="originFarmInformation" name="originFarmInformation"><br>
-            
-            Farm Latitude
-            <br>
-            <input type="text" id="originFarmLatitude" name="originFarmLatitude"><br>
-            
-            Farm Longitude
-            <br>
-            <input type="text" id="originFarmLongitude" name="originFarmLongitude"><br>
-        </div>
-
         <div class=form-break></div>
         
-        <div class="form-group">    
-            <button class="btn-fetchOne" id="button" type="button" data-id="9">Fetch Data</button>
-            <button class="btn-harvest" id="button" type="button" data-id="1">Harvest</button>
-            <button class="btn-process" id="button" type="button" data-id="2">Process</button>
-            <button class="btn-pack" id="button" type="button" data-id="3">Pack</button>
-            <button class="btn-forsale" id="button" type="button" data-id="4">For Sale</button>
-            <button class="btn-buy" id="button" type="button" data-id="5">Buy</button>
-            <button class="btn-ship" id="button" type="button" data-id="6">Ship</button>
-            <button class="btn-receive" id="button" type="button" data-id="7">Receive</button>
-            <button class="btn-purchase" id="button" type="button" data-id="8">Purchase</button>
-        </div>
-
         <div class=form-break></div>
         <hr>
     </div>
 
-    <h2>Transaction History<span id="ftc-history"></span></h2>
+    <h2>Transaction History</h2>
     <div>
-        <ul id="ftc-events">
+        <ul id="event-list">
             <!-- Events will appear here from app.js -->
         </ul>
 
@@ -110,10 +166,31 @@
         <hr>
     </div>
 
+    <div class=form-break></div>
+
+    <h2>Roles</h2>
+    <div class="form-group">           
+        Address
+        <br>
+        <input type="text" id="address" name="address" size="50"><br>
+        <br>
+
+        <button type="button" data-id="16">Add Farmer</button>
+        <button type="button" data-id="17">Add Mill</button>
+        <button type="button" data-id="18">Add Refinery</button>
+        <button type="button" data-id="19">Add Distributor</button>
+        <button type="button" data-id="20">Add Retailer</button>
+        <button type="button" data-id="21">Add Consumer</button>
+    </div>
+    <div class=form-break></div>
+    
+    <div class=form-break></div>
+    <hr>
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="js/web3.min.js"></script>
-    <script src="js/truffle-contract.min.js"></script>
-    <script src="js/app.js"></script>
+    <script src="src/js/web3.min.js"></script>
+    <script src="src/js/truffle-contract.min.js"></script>
+    <script src="src/js/app.js"></script>
 </body>
 
 </html>

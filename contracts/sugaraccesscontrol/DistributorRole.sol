@@ -3,7 +3,7 @@ pragma solidity ^0.8.17;
 
 // Import the library 'Roles'
 import "./Roles.sol";
-import "../coffeecore/Ownable.sol";
+import "../sugarcore/Ownable.sol";
 
 // Define a contract 'DistributorRole' to manage this role - add, remove, check
 contract DistributorRole is Ownable {
