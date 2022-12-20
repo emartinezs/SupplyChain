@@ -73,6 +73,11 @@ module.exports = {
      network_id: "*",       // Any network (default: none)
      websockets: true
     },
+    test: {
+      provider: () => new Web3.providers.WebsocketProvider("ws://127.0.0.1:9545"),
+      network_id: "*",       // Any network (default: none)
+      websockets: true
+     },
     //
     // An additional network, but with some advanced options…
     // advanced: {
